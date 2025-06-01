@@ -36,8 +36,8 @@ onMounted(() => {
 
 const submit = async () => {
   const url = editing.value._id
-    ? `http://localhost:4000/api/stations/${editing.value._id}`
-    : 'http://localhost:4000/api/stations'
+    ? `https://charge-stations.onrender.com/api/stations/${editing.value._id}`
+    : 'https://charge-stations.onrender.com/api/stations'
   const method = editing.value._id ? 'put' : 'post'
 
   await axios[method](url, editing.value, {

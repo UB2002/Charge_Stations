@@ -37,7 +37,7 @@ const fetchChargers = async () => {
       return;
     }
     
-    const res = await axios.get('http://localhost:4000/api/stations', {
+    const res = await axios.get('https://charge-stations.onrender.com/api/stations', {
       headers: { Authorization: `Bearer ${auth.token}` }
     })
     chargers.value = res.data
@@ -54,7 +54,7 @@ const filteredChargers = computed(() =>
 )
 
 const del = async (id) => {
-  await axios.delete(`http://localhost:4000/api/stations/${id}`, {
+  await axios.delete(`https://charge-stations.onrender.com/api/stations/${id}`, {
     headers: { Authorization: `Bearer ${auth.token}` }
   })
   fetchChargers()
